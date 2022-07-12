@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 // File: @openzeppelin/contracts/utils/Strings.sol
+// THIS FILE IS ONLY FOR TESTING PURPOSE IN 13 JULY 2022
 
 // OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)
 
