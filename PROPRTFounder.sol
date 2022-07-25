@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: MIT
+// This is the official PROPRT Founder Card NFT Release. 440 NFTs with Real-World utiility for Real-World Property Investing.
+// PROPRT NFTs are created for the purpose of supporting and building the PROPRT.io ecosystem, more details at https://proprt.io
 
 pragma solidity ^0.8.4;
 
