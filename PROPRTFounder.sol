@@ -3,10 +3,11 @@
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "@openzeppelin/contracts/token/common/ERC2981.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract PROPRTFounder is ERC1155, Ownable{
+contract PROPRTFounder is ERC1155, ERC2981, Ownable{
 
     mapping (uint256 => string) private _uris;
     string public name = "PROPRT Founder";
@@ -16,6 +17,7 @@ contract PROPRTFounder is ERC1155, Ownable{
         for (uint i = 0; i<20; i++){
             uint256 PROPRTFounder = i+1;
             _mint(msg.sender, PROPRTFounder, 1, "");
+            _setDefaultRoyalty(_msgSender(), 500);
         }
     }
 
@@ -27,5 +29,9 @@ contract PROPRTFounder is ERC1155, Ownable{
                 ".json"
             )
         );
+    }
+
+    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC1155, ERC2981) returns (bool) {
+        return super.supportsInterface(interfaceId);
     }
 }
