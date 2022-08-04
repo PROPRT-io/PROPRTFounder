@@ -15,7 +15,7 @@ contract PROPRTFounder is ERC1155, ERC2981, Ownable{
     string public name = "PROPRT Founder";
     string public symbol = "PROPRTFounder";
 
-    constructor() ERC1155("https://bafybeif6gsqjhcnaypxtjoh43tcjca2kxrqxb6paxi4gjoevuasjmka5py.ipfs.nftstorage.link/{i}.json"){
+    constructor() ERC1155("https://proprt.mypinata.cloud/ipfs/QmUF9Kvr9wwoCQ21zbMDcjDbRyYKiTEPkZs5UUgyHfq1XA/{i}.json"){
         for (uint i = 0; i<20; i++){
             uint256 PROPRTFounder = i+1;
             _mint(msg.sender, PROPRTFounder, 1, "");
@@ -26,7 +26,7 @@ contract PROPRTFounder is ERC1155, ERC2981, Ownable{
     function uri(uint256 _tokenId) override public view returns (string memory){
         return string(
             abi.encodePacked(
-                "https://bafybeif6gsqjhcnaypxtjoh43tcjca2kxrqxb6paxi4gjoevuasjmka5py.ipfs.nftstorage.link/",
+                "https://proprt.mypinata.cloud/ipfs/QmUF9Kvr9wwoCQ21zbMDcjDbRyYKiTEPkZs5UUgyHfq1XA/",
                 Strings.toString(_tokenId),
                 ".json"
             )
