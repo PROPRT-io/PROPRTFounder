@@ -15,8 +15,10 @@ contract PROPRTFounder is ERC1155, ERC2981, Ownable{
     string public name = "PROPRT Founder";
     string public symbol = "PROPRTFounder";
 
+    // call constructor and loop minting from 1 into 444 of metadata files.
+    // Set the roaylty into 5%
     constructor() ERC1155("https://proprt.mypinata.cloud/ipfs/QmUF9Kvr9wwoCQ21zbMDcjDbRyYKiTEPkZs5UUgyHfq1XA/{i}.json"){
-        for (uint i = 0; i<20; i++){
+        for (uint i = 0; i<444; i++){
             uint256 PROPRTFounder = i+1;
             _mint(msg.sender, PROPRTFounder, 1, "");
             _setDefaultRoyalty(_msgSender(), 500);
